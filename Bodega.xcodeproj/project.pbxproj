@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60CF42C61C6C82FA00B5D874 /* AGFWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */; };
+		60CF42C71C6C82FA00B5D874 /* AGFWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */; };
+		60CF42CA1C6CAC6D00B5D874 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */; };
+		60CF42CD1C6CADD900B5D874 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42CC1C6CADD900B5D874 /* bembibre.jpg */; };
+		60DA26C71C6DEDFF00A01E63 /* AGFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */; };
+		60DA26C81C6DEDFF00A01E63 /* AGFWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */; };
+		60E2D20C1C6B5BC00080349A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D20B1C6B5BC00080349A /* main.m */; };
+		60E2D20F1C6B5BC00080349A /* AGFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D20E1C6B5BC00080349A /* AGFAppDelegate.m */; };
+		60E2D2111C6B5BC00080349A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2101C6B5BC00080349A /* Assets.xcassets */; };
+		60E2D2141C6B5BC00080349A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2121C6B5BC00080349A /* LaunchScreen.storyboard */; };
+		60E2D21D1C6B5D070080349A /* AGFWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D21C1C6B5D070080349A /* AGFWineModel.m */; };
+		60FF5A401C71EF4600ABDCC2 /* zarate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60FF5A3F1C71EF4600ABDCC2 /* zarate.gif */; };
+		60FF5A421C71EF5100ABDCC2 /* comtesDeChampagne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60FF5A411C71EF5100ABDCC2 /* comtesDeChampagne.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60CF42C31C6C82FA00B5D874 /* AGFWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineViewController.h; sourceTree = "<group>"; };
+		60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineViewController.m; sourceTree = "<group>"; };
+		60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWineViewController.xib; sourceTree = "<group>"; };
+		60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
+		60CF42CC1C6CADD900B5D874 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
+		60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWebViewController.h; sourceTree = "<group>"; };
+		60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWebViewController.m; sourceTree = "<group>"; };
+		60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWebViewController.xib; sourceTree = "<group>"; };
+		60E2D2071C6B5BC00080349A /* Bodega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bodega.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E2D20B1C6B5BC00080349A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60E2D20D1C6B5BC00080349A /* AGFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGFAppDelegate.h; sourceTree = "<group>"; };
+		60E2D20E1C6B5BC00080349A /* AGFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGFAppDelegate.m; sourceTree = "<group>"; };
+		60E2D2101C6B5BC00080349A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60E2D2131C6B5BC00080349A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60E2D2151C6B5BC00080349A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E2D21B1C6B5D070080349A /* AGFWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineModel.h; sourceTree = "<group>"; };
+		60E2D21C1C6B5D070080349A /* AGFWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineModel.m; sourceTree = "<group>"; };
+		60FF5A3F1C71EF4600ABDCC2 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
+		60FF5A411C71EF5100ABDCC2 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60E2D2041C6B5BC00080349A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60CF42C81C6C833E00B5D874 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60CF42C31C6C82FA00B5D874 /* AGFWineViewController.h */,
+				60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */,
+				60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */,
+				60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */,
+				60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */,
+				60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60CF42CB1C6CAC7A00B5D874 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				60FF5A411C71EF5100ABDCC2 /* comtesDeChampagne.jpg */,
+				60FF5A3F1C71EF4600ABDCC2 /* zarate.gif */,
+				60CF42CC1C6CADD900B5D874 /* bembibre.jpg */,
+				60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		60E2D1FE1C6B5BC00080349A = {
+			isa = PBXGroup;
+			children = (
+				60E2D2091C6B5BC00080349A /* Bodega */,
+				60E2D2081C6B5BC00080349A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60E2D2081C6B5BC00080349A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D2071C6B5BC00080349A /* Bodega.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60E2D2091C6B5BC00080349A /* Bodega */ = {
+			isa = PBXGroup;
+			children = (
+				60CF42CB1C6CAC7A00B5D874 /* Resources */,
+				60CF42C81C6C833E00B5D874 /* Controllers */,
+				60E2D20D1C6B5BC00080349A /* AGFAppDelegate.h */,
+				60E2D20E1C6B5BC00080349A /* AGFAppDelegate.m */,
+				60E2D21E1C6B5D2D0080349A /* Models */,
+				60E2D2101C6B5BC00080349A /* Assets.xcassets */,
+				60E2D2121C6B5BC00080349A /* LaunchScreen.storyboard */,
+				60E2D2151C6B5BC00080349A /* Info.plist */,
+				60E2D20A1C6B5BC00080349A /* Supporting Files */,
+			);
+			path = Bodega;
+			sourceTree = "<group>";
+		};
+		60E2D20A1C6B5BC00080349A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D20B1C6B5BC00080349A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60E2D21E1C6B5D2D0080349A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D21B1C6B5D070080349A /* AGFWineModel.h */,
+				60E2D21C1C6B5D070080349A /* AGFWineModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60E2D2061C6B5BC00080349A /* Bodega */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60E2D2181C6B5BC00080349A /* Build configuration list for PBXNativeTarget "Bodega" */;
+			buildPhases = (
+				60E2D2031C6B5BC00080349A /* Sources */,
+				60E2D2041C6B5BC00080349A /* Frameworks */,
+				60E2D2051C6B5BC00080349A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bodega;
+			productName = Bodega;
+			productReference = 60E2D2071C6B5BC00080349A /* Bodega.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60E2D1FF1C6B5BC00080349A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Agbo;
+				TargetAttributes = {
+					60E2D2061C6B5BC00080349A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 60E2D2021C6B5BC00080349A /* Build configuration list for PBXProject "Bodega" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60E2D1FE1C6B5BC00080349A;
+			productRefGroup = 60E2D2081C6B5BC00080349A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60E2D2061C6B5BC00080349A /* Bodega */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60E2D2051C6B5BC00080349A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DA26C81C6DEDFF00A01E63 /* AGFWebViewController.xib in Resources */,
+				60CF42CA1C6CAC6D00B5D874 /* splitView_score_glass@2x.png in Resources */,
+				60E2D2111C6B5BC00080349A /* Assets.xcassets in Resources */,
+				60CF42C71C6C82FA00B5D874 /* AGFWineViewController.xib in Resources */,
+				60FF5A421C71EF5100ABDCC2 /* comtesDeChampagne.jpg in Resources */,
+				60FF5A401C71EF4600ABDCC2 /* zarate.gif in Resources */,
+				60CF42CD1C6CADD900B5D874 /* bembibre.jpg in Resources */,
+				60E2D2141C6B5BC00080349A /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60E2D2031C6B5BC00080349A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DA26C71C6DEDFF00A01E63 /* AGFWebViewController.m in Sources */,
+				60E2D21D1C6B5D070080349A /* AGFWineModel.m in Sources */,
+				60E2D20F1C6B5BC00080349A /* AGFAppDelegate.m in Sources */,
+				60CF42C61C6C82FA00B5D874 /* AGFWineViewController.m in Sources */,
+				60E2D20C1C6B5BC00080349A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		60E2D2121C6B5BC00080349A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E2D2131C6B5BC00080349A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60E2D2161C6B5BC00080349A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		60E2D2171C6B5BC00080349A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60E2D2191C6B5BC00080349A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bodega/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.agbo.Bodega;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		60E2D21A1C6B5BC00080349A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bodega/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.agbo.Bodega;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60E2D2021C6B5BC00080349A /* Build configuration list for PBXProject "Bodega" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E2D2161C6B5BC00080349A /* Debug */,
+				60E2D2171C6B5BC00080349A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60E2D2181C6B5BC00080349A /* Build configuration list for PBXNativeTarget "Bodega" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E2D2191C6B5BC00080349A /* Debug */,
+				60E2D21A1C6B5BC00080349A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60E2D1FF1C6B5BC00080349A /* Project object */;
+}
