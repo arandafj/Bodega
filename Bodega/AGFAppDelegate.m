@@ -27,16 +27,26 @@
     // Creamos el modelo
     AGFWineryModel *winery = [[AGFWineryModel alloc] init];
 
-    // Creamos el controlador
+    // Creamos los controladores
     AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:winery
                                                                                            style:UITableViewStylePlain];
-   
-    // Creamos una Navigation
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
     
+    // Creamos los Navigation
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    
+    //Creamos el combinador: SplitView
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    
+    splitVC.viewControllers = @[wineryNav, wineNav];
+    
+    //Asignamos delegados
+    splitVC.delegate = wineVC;
     
     // Lo asignamos como controlador raíz
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = splitVC;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

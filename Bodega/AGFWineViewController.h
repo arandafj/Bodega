@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AGFWineModel.h"
 
-@interface AGFWineViewController : UIViewController
+@interface AGFWineViewController : UIViewController <UISplitViewControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
