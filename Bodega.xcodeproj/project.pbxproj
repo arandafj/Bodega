@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6013EF751C73312E0045D30F /* AGFWineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6013EF741C73312E0045D30F /* AGFWineryModel.m */; };
 		60CF42C61C6C82FA00B5D874 /* AGFWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */; };
 		60CF42C71C6C82FA00B5D874 /* AGFWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */; };
 		60CF42CA1C6CAC6D00B5D874 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */; };
 		60CF42CD1C6CADD900B5D874 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42CC1C6CADD900B5D874 /* bembibre.jpg */; };
 		60DA26C71C6DEDFF00A01E63 /* AGFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */; };
 		60DA26C81C6DEDFF00A01E63 /* AGFWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */; };
+		60E227971C748C3100D0A546 /* AGFWineryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E227961C748C3100D0A546 /* AGFWineryTableViewController.m */; };
 		60E2D20C1C6B5BC00080349A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D20B1C6B5BC00080349A /* main.m */; };
 		60E2D20F1C6B5BC00080349A /* AGFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D20E1C6B5BC00080349A /* AGFAppDelegate.m */; };
 		60E2D2111C6B5BC00080349A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2101C6B5BC00080349A /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6013EF731C73312E0045D30F /* AGFWineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineryModel.h; sourceTree = "<group>"; };
+		6013EF741C73312E0045D30F /* AGFWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineryModel.m; sourceTree = "<group>"; };
 		60CF42C31C6C82FA00B5D874 /* AGFWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineViewController.h; sourceTree = "<group>"; };
 		60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineViewController.m; sourceTree = "<group>"; };
 		60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWineViewController.xib; sourceTree = "<group>"; };
@@ -31,6 +35,8 @@
 		60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWebViewController.h; sourceTree = "<group>"; };
 		60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWebViewController.m; sourceTree = "<group>"; };
 		60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWebViewController.xib; sourceTree = "<group>"; };
+		60E227951C748C3100D0A546 /* AGFWineryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineryTableViewController.h; sourceTree = "<group>"; };
+		60E227961C748C3100D0A546 /* AGFWineryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineryTableViewController.m; sourceTree = "<group>"; };
 		60E2D2071C6B5BC00080349A /* Bodega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bodega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E2D20B1C6B5BC00080349A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		60E2D20D1C6B5BC00080349A /* AGFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGFAppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 				60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */,
 				60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */,
 				60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */,
+				60E227951C748C3100D0A546 /* AGFWineryTableViewController.h */,
+				60E227961C748C3100D0A546 /* AGFWineryTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +132,8 @@
 			children = (
 				60E2D21B1C6B5D070080349A /* AGFWineModel.h */,
 				60E2D21C1C6B5D070080349A /* AGFWineModel.m */,
+				6013EF731C73312E0045D30F /* AGFWineryModel.h */,
+				6013EF741C73312E0045D30F /* AGFWineryModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -203,9 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6013EF751C73312E0045D30F /* AGFWineryModel.m in Sources */,
 				60DA26C71C6DEDFF00A01E63 /* AGFWebViewController.m in Sources */,
 				60E2D21D1C6B5D070080349A /* AGFWineModel.m in Sources */,
 				60E2D20F1C6B5BC00080349A /* AGFAppDelegate.m in Sources */,
+				60E227971C748C3100D0A546 /* AGFWineryTableViewController.m in Sources */,
 				60CF42C61C6C82FA00B5D874 /* AGFWineViewController.m in Sources */,
 				60E2D20C1C6B5BC00080349A /* main.m in Sources */,
 			);
