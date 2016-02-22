@@ -118,6 +118,13 @@ titleForHeaderInSection:(NSInteger)section{
     
     [self.delegate wineryTableViewController:self didSelecteWine:wine];
     
+    // Notificación
+    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION
+                                                      object:self
+                                                    userInfo:@{KEY_WINE:wine}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+    
 }
 
 

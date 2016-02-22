@@ -7,6 +7,7 @@
 //
 
 #import "AGFWebViewController.h"
+#import "AGFWineryTableViewController.h"
 
 @interface AGFWebViewController ()
 
@@ -31,6 +32,33 @@
     [super viewWillAppear:animated];
     
     [self syncViewToModel];
+    
+    // Alta en notificación
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(wineDidChange:)
+                   name:NEW_WINE_NOTIFICATION
+                 object:nil];
+
+}
+
+-(void) wineDidChange:(NSNotification *) notification{
+    
+    NSDictionary *dict = [notification userInfo];
+    AGFWineModel *newWine = [dict objectForKey:KEY_WINE];
+    
+    // Actualizar el modelo
+    self.model = newWine;
+    [self syncViewToModel];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    // Baja en la notifiación
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 

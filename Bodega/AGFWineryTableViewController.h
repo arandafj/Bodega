@@ -13,6 +13,9 @@
 #define WHITE_WINE_SECTION 1
 #define OTHER_WINE_SECTION 2
 
+#define NEW_WINE_NOTIFICATION @"new_Wine"
+#define KEY_WINE @"wine"
+
 @class AGFWineryTableViewController;
 
 @protocol WineryTableViewControllerDelegate <NSObject>
