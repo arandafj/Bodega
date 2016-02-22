@@ -117,7 +117,7 @@
 -(void) splitViewController:(UISplitViewController *)svc
      willHideViewController:(UIViewController *)aViewController
           withBarButtonItem:(UIBarButtonItem *)barButtonItem
-       forPopoverController:(UIPopoverController *)pc {
+       forPopoverController:(UIPopoverController *)pc{
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
     
@@ -130,17 +130,17 @@
     self.navigationItem.rightBarButtonItem = nil;
 }
 
+#pragma mark - WineryTableViewControllerDelegate
 
-
-
-
-
-
-
-
-
-
-
+-(void) wineryTableViewController: (AGFWineryTableViewController *) wineryVC
+                   didSelecteWine: (AGFWineModel *) aWine{
+    
+    self.model = aWine;
+    
+    self.title = aWine.name;
+    
+    [self syncViewToModel];
+}
 
 
 @end

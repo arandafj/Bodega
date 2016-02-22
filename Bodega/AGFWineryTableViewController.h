@@ -13,9 +13,21 @@
 #define WHITE_WINE_SECTION 1
 #define OTHER_WINE_SECTION 2
 
+@class AGFWineryTableViewController;
+
+@protocol WineryTableViewControllerDelegate <NSObject>
+
+-(void) wineryTableViewController: (AGFWineryTableViewController *) wineryVC
+                 didSelecteWine: (AGFWineModel *) aWine;
+
+@end
+
+
+
 @interface AGFWineryTableViewController : UITableViewController
 
-@property (strong, nonatomic) AGFWineryModel *model;
+@property (nonatomic, strong) AGFWineryModel *model;
+@property (nonatomic, weak)  id <WineryTableViewControllerDelegate> delegate;
 
 -(id) initWithModel:(AGFWineryModel *) aModel
              style:(UITableViewStyle) aStyle;

@@ -115,13 +115,8 @@ titleForHeaderInSection:(NSInteger)section{
     }else if (indexPath.section == OTHER_WINE_SECTION){
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
-
-    // Creamos un controlador para dicho vino
     
-    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:wine];
-    
-    // Hacemos un push al navigation controller dentro del cual estamos
-    [self.navigationController pushViewController:wineVC animated:YES];
+    [self.delegate wineryTableViewController:self didSelecteWine:wine];
     
 }
 
