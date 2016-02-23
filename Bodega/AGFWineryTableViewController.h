@@ -16,10 +16,6 @@
 #define NEW_WINE_NOTIFICATION @"new_Wine"
 #define KEY_WINE @"wine"
 
-#define SELECTION_KEY @"section"
-#define ROW_KEY @"row"
-#define LAST_WINE_KEY @"lastWine"
-
 @class AGFWineryTableViewController;
 
 @protocol WineryTableViewControllerDelegate <NSObject>
@@ -37,9 +33,7 @@
 @property (nonatomic, weak)  id <WineryTableViewControllerDelegate> delegate;
 
 -(id) initWithModel:(AGFWineryModel *) aModel
-              style:(UITableViewStyle) aStyle;
-
--(AGFWineModel *)lastSelectdWine;
+             style:(UITableViewStyle) aStyle;
 
 
 @end

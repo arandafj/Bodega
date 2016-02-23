@@ -27,13 +27,6 @@
     return self;
 }
 
--(void)viewDidLoad{
-    
-    [super viewDidLoad];
-    [self setDefaults];
-    
-}
-
 - (void)viewWillAppear:(BOOL)animated   {
     [super viewWillAppear:animated];
     
@@ -110,84 +103,8 @@ titleForHeaderInSection:(NSInteger)section{
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // Suponemos que estamos en un navigation controller
     
-    // Escogemos el vino seleccionado
-    AGFWineModel *wine = [self wineForIndexPath:indexPath];
-    
-    // Avisar al delegado
-    [self.delegate wineryTableViewController:self didSelecteWine:wine];
-    
-    // Enviar notificación
-    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION
-                                                      object:self
-                                                    userInfo:@{KEY_WINE:wine}];
-    
-    [[NSNotificationCenter defaultCenter] postNotification:n];
-    
-    // Guardar el último vino seleccionado
-    [self savelastSelectedWineAtSection:indexPath.section row:indexPath.row];
-    
-}
-
-#pragma mark - NSUserDefalults
-
-- (NSDictionary *)setDefaults{
-    
-    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-    
-    // Por defecto, mostraremos el primero de los tintos
-    NSDictionary *defaulWineCoords = @{SELECTION_KEY:@(RED_WINE_SECTION), ROW_KEY:@0};
-    
-    // lo asignamos
-    [defaults setObject:defaulWineCoords
-                 forKey:LAST_WINE_KEY];
-    
-    //guardamos
-    [defaults synchronize];
-    
-    return defaulWineCoords;
-    
-}
-
--(void)savelastSelectedWineAtSection:(NSUInteger)section row:(NSUInteger)row{
-    
-    NSUserDefaults *defautls = [NSUserDefaults standardUserDefaults];
-    [defautls setObject:@{SELECTION_KEY:@(section), ROW_KEY:@(row)}
-                 forKey:LAST_WINE_KEY];
-    
-    [defautls synchronize]; // Por si acaso, guardamos
-}
-
--(AGFWineModel *)lastSelectdWine{
-    
-    NSIndexPath *indexPath = nil;
-    NSDictionary *coords = nil;
-    
-    coords = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WINE_KEY];
-    
-    if (coords == nil) {
-        // No hay nada bajo la clave LAST_WINE_KEY.
-        // Esto quiere decir que es la primera vez que se llama a la App.
-        // Ponemos un valor por defecto: el primero de los tintos.
-        coords = [self setDefaults];
-    } else {
-        // ya hay algo, es decir, en algún momento se guardó.
-        // No hay nada en especial que haceer.
-    }
-    
-    // Transformamos esas coordenadas en un indexpath
-    indexPath = [NSIndexPath indexPathForRow:[[coords objectForKey:ROW_KEY] integerValue]
-                                   inSection:[[coords objectForKey:SELECTION_KEY] integerValue]];
-    
-    // devolvemos el vino en cuestion
-    return [self wineForIndexPath:indexPath];
-    
-}
-
-#pragma mark - Utils
-
--(AGFWineModel *)wineForIndexPath:(NSIndexPath *) indexPath{
-
     // Averiguamos de que vino se trata
     AGFWineModel *wine = nil;
     
@@ -199,7 +116,16 @@ titleForHeaderInSection:(NSInteger)section{
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
     
-    return wine;
+    [self.delegate wineryTableViewController:self didSelecteWine:wine];
+    
+    // Notificación
+    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION
+                                                      object:self
+                                                    userInfo:@{KEY_WINE:wine}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+    
 }
+
 
 @end

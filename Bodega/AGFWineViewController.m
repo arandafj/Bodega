@@ -10,8 +10,6 @@
 #import "AGFWebViewController.h"
 
 
-
-
 @implementation AGFWineViewController
 
 - (id) initWithModel: (AGFWineModel *) aModel{
