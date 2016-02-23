@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @import UIKit;
 
 #define NO_RATING -1
