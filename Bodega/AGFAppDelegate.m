@@ -25,12 +25,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Creamos el modelo
-    AGFWineryModel *winery = [[AGFWineryModel alloc] init];
+    AGFWineryModel *model = [[AGFWineryModel alloc] init];
 
     // Creamos los controladores
-    AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:winery
+    AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:model
                                                                                            style:UITableViewStylePlain];
-    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    
+    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:[wineryVC lastSelectdWine]];
     
     // Creamos los Navigation
     UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
