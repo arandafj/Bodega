@@ -9,15 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "AGFWineModel.h"
 
+#define RED_WINE_KEY    @"Tinto"
+#define WHITE_WINE_KEY  @"Blanco"
+#define OTHER_WINE_KEY  @"Rosado"
+
 @interface AGFWineryModel : NSObject
 
-@property (readonly, nonatomic) int redWineCount;
-@property (readonly, nonatomic) int whiteWineCount;
-@property (readonly, nonatomic) int otherWineCount;
+@property (readonly, nonatomic) NSUInteger redWineCount;
+@property (readonly, nonatomic) NSUInteger whiteWineCount;
+@property (readonly, nonatomic) NSUInteger otherWineCount;
 
 
--(AGFWineModel *) redWineAtIndex: (int) index;
--(AGFWineModel *) whiteWineAtIndex: (int) index;
--(AGFWineModel *) otherWineAtIndex: (int) index;
+-(AGFWineModel *) redWineAtIndex: (NSUInteger) index;
+-(AGFWineModel *) whiteWineAtIndex: (NSUInteger) index;
+-(AGFWineModel *) otherWineAtIndex: (NSUInteger) index;
 
 @end
