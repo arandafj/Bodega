@@ -10,9 +10,10 @@
 
 @interface AGFWineryModel()
 
-@property (strong, nonatomic) NSArray *redWines;
-@property (strong, nonatomic) NSArray *whiteWines;
-@property (strong, nonatomic) NSArray *otherWines;
+@property (strong, nonatomic) NSMutableArray *redWines;
+@property (strong, nonatomic) NSMutableArray *whiteWines;
+@property (strong, nonatomic) NSMutableArray *otherWines;
+
 
 @end
 
@@ -20,76 +21,94 @@
 
 #pragma mark  - Properties
 
--(int) redWineCount{
+-(NSUInteger) redWineCount{
     
     return [self.redWines count];
 }
 
--(int) whiteWineCount{
+-(NSUInteger) whiteWineCount{
     
     return [self.whiteWines count];
 }
 
--(int) otherWineCount{
+-(NSUInteger) otherWineCount{
     
     return [self.otherWines count];
 }
 
--(id) init {
+#pragma mark - Init
+-(id)init{
     
     if (self = [super init]) {
-        AGFWineModel *tintorro = [AGFWineModel wineWithName:@"Bembibre"
-                                            wineCompanyName:@"Dominio de Tares"
-                                                       type:@"Tinto"
-                                                     origin:@"El Bierzo"
-                                                     grapes:@[@"Mencía"]
-                                             wineCompanyWeb:[NSURL URLWithString:@"http://www.dominiodetares.com"]
-                                                      notes:@"Vendiamiado a mano racimo a racimo, fermentado con su propia levadura natural y criado durante 16 meses en barricas de roble francés y americano con 24 meses extra en botella. Vino de intenso color granate, nariz de frutos rojos y negros confitados, recuerdos de ciruela pasa y frutos secos tostados. Boca densa, pulida y cálida. Para compartir platos de sabor potente, como cocidos hechos a fuego lento, carnes de caza o cordero al horno. Se recomienda abrirlo y decantarlo 30 minutos antes de servir y disfrutarlo a una temperatura de unos 16°C. Nunca muy fresco ni demasiado caliente."
-                                                     rating:5
-                                                      photo:[UIImage imageNamed:@"bembibre.jpg"]];
         
-        AGFWineModel *albarinno = [AGFWineModel wineWithName:@"Zárate"
-                                             wineCompanyName:@"Zárate"
-                                                        type:@"white"
-                                                      origin:@"Rias Bajas"
-                                                      grapes:@[@"Albariño"]
-                                              wineCompanyWeb:[NSURL URLWithString:@"http://www.albarino-zarate.com"]
-                                                       notes:@"El albariño Zarate es un vino blanco monovarietal que pertenece a la Denominación de Origen Rías Baixas. Considerado por la crítica especializada como uno de los grandes vinos blancos del mundo, el albariño ya es todo un mito."
-                                                      rating:4
-                                                       photo:[UIImage imageNamed:@"zarate.gif"]];
-        
-        AGFWineModel *champagne = [AGFWineModel wineWithName:@"Comtes de Champagne"
-                                             wineCompanyName:@"Champagne Taittinger"
-                                                        type:@"other"
-                                                      origin:@"Champagne"
-                                                      grapes:@[@"Chardonnay"]
-                                              wineCompanyWeb:[NSURL URLWithString:@"http://www.taittinger.fr"]
-                                                       notes:@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc purus. Curabitur eu velit mauris. Curabitur magna nisi, ullamcorper ac bibendum ac, laoreet et justo. Praesent vitae tortor quis diam luctus condimentum. Suspendisse potenti. In magna elit, interdum sit amet facilisis dictum, bibendum nec libero. Maecenas pellentesque posuere vehicula. Vivamus eget nisl urna, quis egestas sem. Vivamus at venenatis quam. Sed eu nulla a orci fringilla pulvinar ut eu diam. Morbi nibh nibh, bibendum at laoreet egestas, scelerisque et nisi. Donec ligula quam, semper nec bibendum in, semper eget dolor. In hac habitasse platea dictumst. Maecenas adipiscing semper rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
-                                                      rating:5
-                                                       photo:[UIImage imageNamed:@"comtesDeChampagne.jpg"]];
-        
-        self.redWines = @[tintorro];
-        self.whiteWines = @[albarinno];
-        self.otherWines = @[champagne];
-    }
- 
-    return self;
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://static.keepcoding.io/baccus/wines.json"]];
+        NSURLResponse *response = [[NSURLResponse alloc] init];
+        NSError *error;
     
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+        if (data != nil) {
+            // No ha habido error
+            NSArray * JSONObjects = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:kNilOptions
+                                                                      error:&error];
+            
+            if (JSONObjects != nil) {
+                // No ha habido error
+                for(NSDictionary *dict in JSONObjects){
+                    AGFWineModel *wine = [[AGFWineModel alloc] initWithDictionary:dict];
+                    
+                    // Añadimos al tipo adecuado
+                    if ([wine.type isEqualToString:RED_WINE_KEY]) {
+                        if (!self.redWines) {
+                            self.redWines = [NSMutableArray arrayWithObject:wine];
+                        }
+                        else {
+                            [self.redWines addObject:wine];
+                        }
+                    }
+                    else if ([wine.type isEqualToString:WHITE_WINE_KEY]) {
+                        if (!self.whiteWines) {
+                            self.whiteWines = [NSMutableArray arrayWithObject:wine];
+                        }
+                        else {
+                            [self.whiteWines addObject:wine];
+                        }                    }
+                    else {
+                        if (!self.otherWines) {
+                            self.otherWines = [NSMutableArray arrayWithObject:wine]; //fix/11a
+                        }
+                        else {
+                            [self.otherWines addObject:wine]; //fix/11a
+                        }
+                    }
+                }
+            }else{
+                // Se ha producido un error al parsear el JSON
+                NSLog(@"Error al parsear JSON: %@", error.localizedDescription);
+            }
+        }else{
+            // Error al descargar los datos del servidor
+            NSLog(@"Error al descargar datos del servidor: %@", error.localizedDescription);
+        }
+    }
+    return self;
 }
 
 
--(AGFWineModel *) redWineAtIndex: (int) index{
+
+-(AGFWineModel *) redWineAtIndex: (NSUInteger) index{
     
     return [self.redWines objectAtIndex:index];
 
 }
 
--(AGFWineModel *) whiteWineAtIndex: (int) index{
+-(AGFWineModel *) whiteWineAtIndex: (NSUInteger) index{
     
     return [self.whiteWines objectAtIndex:index];
 }
 
--(AGFWineModel *) otherWineAtIndex: (int) index{
+-(AGFWineModel *) otherWineAtIndex: (NSUInteger) index{
     
     return [self.otherWines objectAtIndex:index];
 }

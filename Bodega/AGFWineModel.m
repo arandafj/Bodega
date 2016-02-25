@@ -10,6 +10,22 @@
 
 @implementation AGFWineModel
 
+@synthesize photo = _photo;
+
+#pragma mark - Propiedades
+-(UIImage *)photo{
+    // Esto va a bloquear y se debería de hacer en segundo plano
+    // Sin embargo, aun no sabemos hacer eso, asi que de momento lo dejamos
+    
+    // Carga perezosa: solo cargo la imagen si hace falta.
+    if (_photo == nil) {
+        _photo = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.photoURL]];
+    }
+    return _photo;
+    
+}
+
+
 #pragma mark - Class methods
 
 +(id) wineWithName: (NSString *) aName
@@ -20,17 +36,18 @@
     wineCompanyWeb: (NSURL *) aURL
              notes: (NSString *) aNotes
             rating: (int) aRating
-             photo: (UIImage *) aPhoto{
+          photoURL: (NSURL *) aPhotoURL
+{
     
-    return [[self alloc] initWithName: (NSString *) aName
-                      wineCompanyName: (NSString *) aWineCompanyName
-                                 type: (NSString *) aType
-                               origin: (NSString *) anOrigin
-                               grapes: (NSArray *) arrayOfGrapes
-                       wineCompanyWeb: (NSURL *) aURL
-                                notes: (NSString *) aNotes
-                               rating: (int) aRating
-                                photo: (UIImage *) aPhoto ];
+    return [[self alloc] initWithName: aName
+                      wineCompanyName: aWineCompanyName
+                                 type: aType
+                               origin: anOrigin
+                               grapes: arrayOfGrapes
+                       wineCompanyWeb: aURL
+                                notes: aNotes
+                               rating: aRating
+                             photoURL: aPhotoURL ];
 }
 
 +(id) wineWithName: (NSString *) aName
@@ -38,10 +55,37 @@
               type: (NSString *) aType
             origin: (NSString *) anOrigin{
     
-    return[[self alloc]initWithName: (NSString *) aName
-                    wineCompanyName: (NSString *) aWineCompanyName
-                               type: (NSString *) aType
-                             origin: (NSString *) anOrigin];
+    return[[self alloc]initWithName: aName
+                    wineCompanyName: aWineCompanyName
+                               type: aType
+                             origin: anOrigin];
+}
+
+#pragma mark - JSON
+-(id) initWithDictionary:(NSDictionary *)aDict{
+    
+    return [self initWithName:[aDict objectForKey:@"name"]
+              wineCompanyName:[aDict objectForKey:@"wineCompanyName"]
+                         type:[aDict objectForKey:@"type"]
+                       origin:[aDict objectForKey:@"origin"]
+                       grapes:[self extractGrapesFromJSONArray:[aDict objectForKey:@"grapes"]]
+               wineCompanyWeb:[NSURL URLWithString:[aDict objectForKey:@"wine_web"]]    //fix/11a
+                        notes:[aDict objectForKey:@"notes"]
+                       rating:[[aDict objectForKey:@"rating"] intValue]
+                     photoURL:[NSURL URLWithString:[aDict objectForKey:@"picture"]]];
+}
+
+-(NSDictionary *)proxyForJSON{
+    
+    return @{@"name"            : self.name,
+             @"wineCompanyName" : self.wineCompanyName,
+             @"wine_web"        : [self.wineCompanyWeb path], //fix/11a
+             @"type"            : self.type,
+             @"origin"          : self.origin,
+             @"grapes"          : self.grapes,
+             @"notes"           : self.notes,
+             @"rating"          : @(self.rating),
+             @"picture"        : [self.photoURL path]};
 }
 
 
@@ -55,7 +99,8 @@
     wineCompanyWeb: (NSURL *) aURL
              notes: (NSString *) aNotes
             rating: (int) aRating
-             photo: (UIImage *) aPhoto{
+             photoURL:(NSURL *)aPhotoURL
+{
     
     if (self = [super init]){
         // Asignamos los parametros a la variable de instancia
@@ -67,7 +112,7 @@
         _wineCompanyWeb = aURL;
         _notes = aNotes;
         _rating = aRating;
-        _photo = aPhoto;
+        _photoURL = aPhotoURL;
     }
     
     return  self;
@@ -86,8 +131,39 @@
           wineCompanyWeb: nil
                    notes: nil
                   rating: NO_RATING
-                   photo: nil];
+                   photoURL: nil];
     
 }
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Name: %@\nCompany name: %@\nType: %@\nOrigin: %@\nGrapes: %@\nWine company web: %@\nNotes: %@\nRating: %d\n", self.name, self.wineCompanyName, self.type, self.origin, self.grapes, self.wineCompanyWeb, self.notes, self.rating];
+}
+
+#pragma mark - Utils
+-(NSArray*)extractGrapesFromJSONArray: (NSArray*)JSONArray{
+    
+    NSMutableArray *grapes = [NSMutableArray arrayWithCapacity:[JSONArray count]];
+    
+    for (NSDictionary *dict in JSONArray) {
+        [grapes addObject:[dict objectForKey:@"grape"]];
+    }
+    
+    return grapes;
+}
+
+-(NSArray *)packGrapesIntoJSONArray{
+    
+    NSMutableArray *jsonArray = [NSMutableArray arrayWithCapacity:[self.grapes count]];
+    
+    for (NSString *grape in self.grapes) {
+        
+        [jsonArray addObject:@{@"grape": grape}];
+    }
+    
+    return jsonArray;
+    
+}
+
 
 @end
