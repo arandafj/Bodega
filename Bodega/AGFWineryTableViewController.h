@@ -31,7 +31,7 @@
 
 
 
-@interface AGFWineryTableViewController : UITableViewController
+@interface AGFWineryTableViewController : UITableViewController<WineryTableViewControllerDelegate>
 
 @property (nonatomic, strong) AGFWineryModel *model;
 @property (nonatomic, weak)  id <WineryTableViewControllerDelegate> delegate;

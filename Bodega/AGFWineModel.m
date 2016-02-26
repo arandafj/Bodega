@@ -65,7 +65,7 @@
 -(id) initWithDictionary:(NSDictionary *)aDict{
     
     return [self initWithName:[aDict objectForKey:@"name"]
-              wineCompanyName:[aDict objectForKey:@"wineCompanyName"]
+              wineCompanyName:[aDict objectForKey:@"company"]
                          type:[aDict objectForKey:@"type"]
                        origin:[aDict objectForKey:@"origin"]
                        grapes:[self extractGrapesFromJSONArray:[aDict objectForKey:@"grapes"]]

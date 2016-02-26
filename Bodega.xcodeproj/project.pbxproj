@@ -46,6 +46,7 @@
 		60E2D2151C6B5BC00080349A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E2D21B1C6B5D070080349A /* AGFWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineModel.h; sourceTree = "<group>"; };
 		60E2D21C1C6B5D070080349A /* AGFWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineModel.m; sourceTree = "<group>"; };
+		60E5E3A71C7F572E004D5288 /* Bodega-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bodega-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		60FF5A3F1C71EF4600ABDCC2 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
 		60FF5A411C71EF5100ABDCC2 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +123,7 @@
 		60E2D20A1C6B5BC00080349A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60E5E3A71C7F572E004D5288 /* Bodega-Prefix.pch */,
 				60E2D20B1C6B5BC00080349A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -263,6 +265,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Bodega-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -275,6 +279,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -304,6 +309,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Bodega-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -312,6 +319,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				New_Setting = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -325,7 +333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = biz.agbo.Bodega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -337,7 +345,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = biz.agbo.Bodega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

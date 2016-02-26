@@ -19,6 +19,38 @@
 
 @implementation AGFAppDelegate
 
+-(UIViewController *) rootViewControllerForPadWithModel:(AGFWineryModel *) aModel{
+    // Controladores
+    AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:aModel
+                                                                                           style:UITableViewStylePlain];
+    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:[wineryVC lastSelectdWine]];
+    
+    // Combinadores
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    
+    splitVC.viewControllers = @[wineryNav, wineNav];
+    
+    //Asignamos delegados
+    splitVC.delegate = wineVC;
+    wineryVC.delegate = wineVC;
+    
+    return splitVC;
+}
+
+-(UIViewController *) rootViewControllerForPhoneWithModel:(AGFWineryModel *) aModel{
+    // Controlador
+    AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:aModel
+                                                                                           style:UITableViewStylePlain];
+    // Combinador
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+   
+    //Delegado (autodelegación)
+    wineryVC.delegate = wineryVC;
+    
+    return wineryNav;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -26,34 +58,20 @@
     
     // Creamos el modelo
     AGFWineryModel *model = [[AGFWineryModel alloc] init];
-
-    // Creamos los controladores
-    AGFWineryTableViewController *wineryVC = [[AGFWineryTableViewController alloc] initWithModel:model
-                                                                                           style:UITableViewStylePlain];
     
-    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:[wineryVC lastSelectdWine]];
-    
-    // Creamos los Navigation
-    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
-    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
-    
-    //Creamos el combinador: SplitView
-    
-    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
-    
-    splitVC.viewControllers = @[wineryNav, wineNav];
-
-    
-    //Asignamos delegados
-    splitVC.delegate = wineVC;
-    wineryVC.delegate = wineVC;
-    
-    // Lo asignamos como controlador raíz
-    self.window.rootViewController = splitVC;
+    // Configuramso controladores, combinadores y delegados según el tipo de dispositivo
+    UIViewController *rootVC = nil;
+    if (!IS_PHONE) {
+        rootVC = [self rootViewControllerForPadWithModel:model];
+    }else{
+        rootVC = [self rootViewControllerForPhoneWithModel:model];
+    }
+    self.window.rootViewController = rootVC;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

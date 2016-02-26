@@ -71,7 +71,6 @@
     self.notesLabel.text = self.model.notes;
     self.wineryNameLabel.text = self.model.wineCompanyName;
     self.photoView.image = self.model.photo;
-    self.nameLabel.text = self.model.name;
     self.grapesLabel.text = [self arrayToString: self.model.grapes];
     
     [self displayRating: self.model.rating];
@@ -133,7 +132,6 @@
 }
 
 #pragma mark - WineryTableViewControllerDelegate
-
 -(void) wineryTableViewController: (AGFWineryTableViewController *) wineryVC
                    didSelecteWine: (AGFWineModel *) aWine{
     
