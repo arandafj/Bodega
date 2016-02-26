@@ -110,25 +110,41 @@ titleForHeaderInSection:(NSInteger)section{
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     // Escogemos el vino seleccionado
     AGFWineModel *wine = [self wineForIndexPath:indexPath];
     
-    // Avisar al delegado
-    [self.delegate wineryTableViewController:self didSelecteWine:wine];
+    if (IS_PHONE) {
+        // si estamos en iPhone haremos un push al navigationController
+        // AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:wine];
+        // [self.navigationController pushViewController:wineVC animated:YES];
+        
+        // Avisar al delegado
+        [self.delegate wineryTableViewController:self didSelecteWine:wine];
+        
+    } else{
+        // si es iPad notificaremos el cambio a los dos viewControllers que podemos tener cargado en memoria.
     
-    // Enviar notificación
-    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION
-                                                      object:self
-                                                    userInfo:@{KEY_WINE:wine}];
-    
-    [[NSNotificationCenter defaultCenter] postNotification:n];
-    
-    // Guardar el último vino seleccionado
-    [self savelastSelectedWineAtSection:indexPath.section row:indexPath.row];
-    
+        // Avisar al delegado
+        [self.delegate wineryTableViewController:self didSelecteWine:wine];
+        
+        // Enviar notificación
+        NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION
+                                                          object:self
+                                                        userInfo:@{KEY_WINE:wine}];
+        
+        [[NSNotificationCenter defaultCenter] postNotification:n];
+        
+        // Guardar el último vino seleccionado
+        [self savelastSelectedWineAtSection:indexPath.section row:indexPath.row];
+    }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // devolvemos el tamaño al mismo que el background que hemos puesto
+    return 72;
+}
 #pragma mark - NSUserDefalults
 
 - (NSDictionary *)setDefaults{
@@ -200,6 +216,18 @@ titleForHeaderInSection:(NSInteger)section{
     }
     
     return wine;
+}
+#pragma mark - WineryTableViewControllerDelegate
+
+-(void) wineryTableViewController: (AGFWineryTableViewController *) wineryVC
+                   didSelecteWine: (AGFWineModel *) aWine
+{
+    // Crear el controlador
+    AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:aWine];
+    
+    // Hacer un Push
+    [self.navigationController pushViewController:wineVC animated:YES];
+        
 }
 
 @end
