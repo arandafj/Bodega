@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="grapesLabel" destination="1BV-J3-A0L" id="Fhf-Gl-1MB"/>
                 <outlet property="nameLabel" destination="YtN-Qa-SVL" id="Pan-QY-6z0"/>
-                <outlet property="notesLabel" destination="WaO-w0-dRR" id="tMt-wz-6ve"/>
+                <outlet property="notesLabel" destination="wM0-Ef-pfa" id="fW9-pd-WZu"/>
                 <outlet property="originLabel" destination="7ec-Ze-Zmj" id="pg4-7Y-jaN"/>
                 <outlet property="photoView" destination="umZ-9z-LEd" id="zC3-DZ-TzT"/>
                 <outlet property="typeLabel" destination="HWv-Zp-Z4E" id="kLZ-m3-JEx"/>
@@ -66,13 +66,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="HJh-bi-NXE">
-                    <rect key="frame" x="621" y="177" width="22" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="displayWeb:" destination="-1" eventType="touchUpInside" id="nTi-Az-JJL"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cJ0-mu-oNh">
                     <rect key="frame" x="338" y="404" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,16 +86,32 @@
                     <rect key="frame" x="603" y="404" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WaO-w0-dRR">
-                    <rect key="frame" x="22" y="516" width="671" height="291"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="wM0-Ef-pfa">
+                    <rect key="frame" x="15" y="516" width="729" height="482"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HJh-bi-NXE">
+                    <rect key="frame" x="633" y="182" width="60" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="www.png">
+                        <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="displayWeb:" destination="-1" eventType="touchUpInside" id="nTi-Az-JJL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="335" y="-343"/>
         </view>
     </objects>
+    <resources>
+        <image name="www.png" width="60" height="21"/>
+    </resources>
 </document>

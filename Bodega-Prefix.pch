@@ -13,5 +13,5 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define IS_PHONE UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone
+#define IS_IPHONE UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone
 

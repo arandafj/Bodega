@@ -99,6 +99,9 @@ titleForHeaderInSection:(NSInteger)section{
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
     
+    cell.textLabel.font = [UIFont fontWithName:@"Valentina-Regular" size:16];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Valentina-Regular" size:14];
+    
     // Sincronizar celda (vista) y modelo (vino)
     cell.imageView.image = wine.photo;
     cell.textLabel.text = wine.name;
@@ -114,10 +117,8 @@ titleForHeaderInSection:(NSInteger)section{
     // Escogemos el vino seleccionado
     AGFWineModel *wine = [self wineForIndexPath:indexPath];
     
-    if (IS_PHONE) {
+    if (IS_IPHONE) {
         // si estamos en iPhone haremos un push al navigationController
-        // AGFWineViewController *wineVC = [[AGFWineViewController alloc] initWithModel:wine];
-        // [self.navigationController pushViewController:wineVC animated:YES];
         
         // Avisar al delegado
         [self.delegate wineryTableViewController:self didSelecteWine:wine];

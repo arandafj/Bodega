@@ -114,7 +114,6 @@
     self.webWine.delegate = self;
     [self.webWine loadRequest:[NSURLRequest requestWithURL:self.model.wineCompanyWeb]];
     
-  
 }
 
 

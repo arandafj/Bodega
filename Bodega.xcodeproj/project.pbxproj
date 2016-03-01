@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6013EF751C73312E0045D30F /* AGFWineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6013EF741C73312E0045D30F /* AGFWineryModel.m */; };
+		6015E7641C85B14700FBFCFF /* Valentina-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6015E7631C85B14700FBFCFF /* Valentina-Regular.otf */; };
+		6015E7661C85BAAF00FBFCFF /* AGFWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6015E7651C85BAAF00FBFCFF /* AGFWineViewController.xib */; };
+		6015E7681C85F0C400FBFCFF /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 6015E7671C85F0C400FBFCFF /* www.png */; };
+		6063FF2C1C847C7800395735 /* AGFWineViewControlleriPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6063FF2A1C847C7800395735 /* AGFWineViewControlleriPhone.xib */; };
 		60CF42C61C6C82FA00B5D874 /* AGFWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */; };
-		60CF42C71C6C82FA00B5D874 /* AGFWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */; };
 		60CF42CA1C6CAC6D00B5D874 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */; };
 		60CF42CD1C6CADD900B5D874 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60CF42CC1C6CADD900B5D874 /* bembibre.jpg */; };
 		60DA26C71C6DEDFF00A01E63 /* AGFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */; };
@@ -27,9 +30,12 @@
 /* Begin PBXFileReference section */
 		6013EF731C73312E0045D30F /* AGFWineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineryModel.h; sourceTree = "<group>"; };
 		6013EF741C73312E0045D30F /* AGFWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineryModel.m; sourceTree = "<group>"; };
+		6015E7631C85B14700FBFCFF /* Valentina-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Valentina-Regular.otf"; sourceTree = "<group>"; };
+		6015E7651C85BAAF00FBFCFF /* AGFWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWineViewController.xib; sourceTree = "<group>"; };
+		6015E7671C85F0C400FBFCFF /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = www.png; sourceTree = "<group>"; };
+		6063FF2A1C847C7800395735 /* AGFWineViewControlleriPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AGFWineViewControlleriPhone.xib; path = ../AGFWineViewControlleriPhone.xib; sourceTree = "<group>"; };
 		60CF42C31C6C82FA00B5D874 /* AGFWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWineViewController.h; sourceTree = "<group>"; };
 		60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGFWineViewController.m; sourceTree = "<group>"; };
-		60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGFWineViewController.xib; sourceTree = "<group>"; };
 		60CF42C91C6CAC6D00B5D874 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
 		60CF42CC1C6CADD900B5D874 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
 		60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGFWebViewController.h; sourceTree = "<group>"; };
@@ -65,9 +71,10 @@
 		60CF42C81C6C833E00B5D874 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6015E7651C85BAAF00FBFCFF /* AGFWineViewController.xib */,
 				60CF42C31C6C82FA00B5D874 /* AGFWineViewController.h */,
 				60CF42C41C6C82FA00B5D874 /* AGFWineViewController.m */,
-				60CF42C51C6C82FA00B5D874 /* AGFWineViewController.xib */,
+				6063FF2A1C847C7800395735 /* AGFWineViewControlleriPhone.xib */,
 				60DA26C41C6DEDFF00A01E63 /* AGFWebViewController.h */,
 				60DA26C51C6DEDFF00A01E63 /* AGFWebViewController.m */,
 				60DA26C61C6DEDFF00A01E63 /* AGFWebViewController.xib */,
@@ -80,6 +87,8 @@
 		60CF42CB1C6CAC7A00B5D874 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6015E7671C85F0C400FBFCFF /* www.png */,
+				6015E7631C85B14700FBFCFF /* Valentina-Regular.otf */,
 				60FF5A411C71EF5100ABDCC2 /* comtesDeChampagne.jpg */,
 				60FF5A3F1C71EF4600ABDCC2 /* zarate.gif */,
 				60CF42CC1C6CADD900B5D874 /* bembibre.jpg */,
@@ -200,10 +209,13 @@
 				60DA26C81C6DEDFF00A01E63 /* AGFWebViewController.xib in Resources */,
 				60CF42CA1C6CAC6D00B5D874 /* splitView_score_glass@2x.png in Resources */,
 				60E2D2111C6B5BC00080349A /* Assets.xcassets in Resources */,
-				60CF42C71C6C82FA00B5D874 /* AGFWineViewController.xib in Resources */,
+				6063FF2C1C847C7800395735 /* AGFWineViewControlleriPhone.xib in Resources */,
 				60FF5A421C71EF5100ABDCC2 /* comtesDeChampagne.jpg in Resources */,
 				60FF5A401C71EF4600ABDCC2 /* zarate.gif in Resources */,
+				6015E7661C85BAAF00FBFCFF /* AGFWineViewController.xib in Resources */,
 				60CF42CD1C6CADD900B5D874 /* bembibre.jpg in Resources */,
+				6015E7641C85B14700FBFCFF /* Valentina-Regular.otf in Resources */,
+				6015E7681C85F0C400FBFCFF /* www.png in Resources */,
 				60E2D2141C6B5BC00080349A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

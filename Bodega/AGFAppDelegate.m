@@ -61,7 +61,7 @@
     
     // Configuramso controladores, combinadores y delegados según el tipo de dispositivo
     UIViewController *rootVC = nil;
-    if (!IS_PHONE) {
+    if (!IS_IPHONE) {
         rootVC = [self rootViewControllerForPadWithModel:model];
     }else{
         rootVC = [self rootViewControllerForPhoneWithModel:model];
