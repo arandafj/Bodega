@@ -9,6 +9,10 @@
 #import "AGFWineViewController.h"
 #import "AGFWebViewController.h"
 
+#define kCustomFontHeader           [UIFont fontWithName:@"Valentina-Regular" size:17]
+#define kCustomFontSubheader        [UIFont fontWithName:@"Valentina-Regular" size:15]
+#define kCustomFontRegular          [UIFont fontWithName:@"Valentina-Regular" size:12]
+
 @implementation AGFWineViewController
 
 - (id) initWithModel: (AGFWineModel *) aModel{
@@ -27,6 +31,18 @@
     return self;
 
 }
+
+- (void)viewDidLoad
+{
+    // como la fuente es custom, tenemos que decirselo por código
+    self.nameLabel.font = kCustomFontHeader;
+    self.wineryNameLabel.font = kCustomFontSubheader;
+    self.typeLabel.font = kCustomFontSubheader;
+    self.originLabel.font = kCustomFontSubheader;
+    self.grapesLabel.font = kCustomFontSubheader;
+    self.notesLabel.font = kCustomFontRegular;
+}
+
 
 #pragma mark - View lifecycle
 
